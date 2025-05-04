@@ -1,4 +1,4 @@
-def calculate_bmi(bmi:float):
+def get_status(bmi:float):
     if bmi < 18.5:
         status = "體重過輕"
     elif bmi < 24:
@@ -21,7 +21,7 @@ def main():
     print(f"身高:{height}""cm")
     print(f"體重:{weight}""kg")
     print(f"BMI:{BMI}")
-    calculate_bmi(BMI)
+    get_status(BMI)
 
 
     
