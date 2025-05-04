@@ -1,3 +1,18 @@
+def calculate_bmi(bmi:float):
+    if bmi < 18.5:
+        status = "體重過輕"
+    elif bmi < 24:
+        status = "正常"
+    elif bmi < 27:
+        status = "過重"
+    elif bmi < 30:
+        status = "輕度肥胖"
+    elif bmi <35:
+        status = "中度肥胖"
+    else:
+        status = "重度肥胖"
+    print(f"狀態:{status}")
+
 def main():
     height:int = int(input("請輸入身高公分"))
     weight:int = int(input("請輸入體重公斤"))
@@ -6,20 +21,10 @@ def main():
     print(f"身高:{height}""cm")
     print(f"體重:{weight}""kg")
     print(f"BMI:{BMI}")
+    calculate_bmi(BMI)
 
-    if BMI < 18.5:
-        status = "體重過輕"
-    elif BMI < 24:
-        status = "正常"
-    elif BMI < 27:
-        status = "過重"
-    elif BMI < 30:
-        status = "輕度肥胖"
-    elif BMI <35:
-        status = "中度肥胖"
-    else:
-        status = "重度肥胖"
-    print(f"狀態:{status}")
+
+    
 
 if __name__ == '__main__':
     main()
