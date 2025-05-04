@@ -14,10 +14,13 @@ def get_status(bmi:float)->str:
     
     return status
 
+def get_bmi(w:int, h:int)->float:
+    return round(w/pow(h/100,2),1)
+
 def main():
     height:int = int(input("請輸入身高公分"))
     weight:int = int(input("請輸入體重公斤"))
-    BMI:float = round(weight/pow(height/100,2),1)
+    BMI:float = get_bmi(weight,height)
 
     print(f"身高:{height}""cm")
     print(f"體重:{weight}""kg")
