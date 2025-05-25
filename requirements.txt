@@ -1,3 +1,5 @@
 requests
 matplotlib
 wget
+numpy
+pandas
