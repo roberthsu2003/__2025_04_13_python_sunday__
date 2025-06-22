@@ -2,3 +2,4 @@ requests
 flask
 gunicorn
 python-dotenv
+google-genai
