@@ -22,6 +22,11 @@ def index(question:str=""):
     html_format = html_format.replace("```html","").replace("```","")
     return html_format
 
+@app.route("/abc")
+def abc():
+    return "<H1>abc</H1>"
+
+
 
 @app.route("/callback", methods=['POST'])
 def callback():
