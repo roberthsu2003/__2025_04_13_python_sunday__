@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
-client = genai.configure(api_key=os.environ['Gemini_API_KEY'])
+client = genai.Client(api_key=os.environ['Gemini_API_KEY'])
 
 
-line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
-handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
+# line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
+# handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
 @app.route("/")
 @app.route("/<string:question>")
@@ -22,6 +22,7 @@ def index(question:str=""):
     html_format = html_format.replace("```html","").replace("```","")
     return html_format
 
+'''
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
@@ -41,3 +42,4 @@ def handle_message(event):
     )
     message = TextSendMessage(text=response.text)
     line_bot_api.reply_message(event.reply_token, message)
+'''
